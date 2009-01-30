@@ -1,0 +1,12 @@
+--- 
+abstract: A Catalyst model base-class for using WWW::MenuGrinder
+author: 
+  - Andrew Rodland <andrew@hbslabs.com>
+generated_by: Dist::Zilla::Plugin::MetaYaml version 1.003
+license: perl
+name: Catalyst-Model-MenuGrinder
+requires: 
+  Catalyst: 5.7012
+  Scope::Guard: 0
+  WWW::MenuGrinder: 0.01_01
+version: 0.01_01
