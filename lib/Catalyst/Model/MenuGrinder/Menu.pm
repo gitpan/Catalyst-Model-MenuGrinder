@@ -1,5 +1,5 @@
 package Catalyst::Model::MenuGrinder::Menu;
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # ABSTRACT : WWW::MenuGrinder base class for Catalyst
@@ -82,7 +82,7 @@ Catalyst::Model::MenuGrinder::Menu
 
 =head1 VERSION
 
-version 0.01_01
+version 0.01_02
 
 =head1 AUTHOR
 

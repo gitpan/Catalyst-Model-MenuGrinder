@@ -1,5 +1,5 @@
 package Catalyst::Model::MenuGrinder;
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 # ABSTRACT: Catalyst Model base class for WWW::MenuGrinder
@@ -33,7 +33,8 @@ sub new {
 sub ACCEPT_CONTEXT {
   my ($self, $c) = @_;
 
-  $c->stash->{__menu_guard} = Scope::Guard->new(sub {
+  $c->stash->{__menu_guard} = [] unless defined $c->stash->{__menu_guard};
+  push @{ $c->stash->{__menu_guard} }, Scope::Guard->new(sub {
       $self->_menu->cleanup();
     }
   );
@@ -53,7 +54,7 @@ Catalyst::Model::MenuGrinder - Catalyst Model base class for WWW::MenuGrinder
 
 =head1 VERSION
 
-version 0.01_01
+version 0.01_02
 
 =head1 SYNOPSIS
 

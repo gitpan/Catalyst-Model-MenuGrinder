@@ -9,4 +9,4 @@ requires:
   Catalyst: 5.7012
   Scope::Guard: 0
   WWW::MenuGrinder: 0.01_01
-version: 0.01_01
+version: 0.01_02

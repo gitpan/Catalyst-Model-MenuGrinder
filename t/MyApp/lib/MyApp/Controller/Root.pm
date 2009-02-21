@@ -1,5 +1,5 @@
 package MyApp::Controller::Root;
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 use strict;

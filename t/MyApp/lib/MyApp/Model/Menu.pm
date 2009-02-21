@@ -1,5 +1,5 @@
 package MyApp::Model::Menu;
-our $VERSION = '0.01_01';
+our $VERSION = '0.01_02';
 
 
 use base qw/Catalyst::Model::MenuGrinder/;

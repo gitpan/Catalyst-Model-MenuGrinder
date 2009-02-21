@@ -9,7 +9,7 @@ WriteMakefile(
   NAME      => 'Catalyst::Model::MenuGrinder',
   AUTHOR    => 'Andrew\ Rodland\ \<andrew\@hbslabs\.com\>',
   ABSTRACT  => 'A Catalyst model base-class for using WWW::MenuGrinder',
-  VERSION   => '0.01_01',
+  VERSION   => '0.01_02',
   EXE_FILES => [ qw() ],
   (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'perl') : ()),
   PREREQ_PM    => {
