@@ -4,6 +4,7 @@ MANIFEST
 META.yml
 Makefile.PL
 README
+dist.ini
 lib/Catalyst/Model/MenuGrinder.pm
 lib/Catalyst/Model/MenuGrinder/Menu.pm
 t/MyApp/Changes
@@ -35,3 +36,5 @@ t/MyApp/t/01app.t
 t/MyApp/t/02pod.t
 t/MyApp/t/03podcoverage.t
 t/MyApp/t/view_TT.t
+t/release-pod-coverage.t
+t/release-pod-syntax.t

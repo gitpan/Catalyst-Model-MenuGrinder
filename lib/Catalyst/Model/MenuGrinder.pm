@@ -1,6 +1,5 @@
 package Catalyst::Model::MenuGrinder;
-our $VERSION = '0.01_02';
-
+our $VERSION = '0.04';
 
 # ABSTRACT: Catalyst Model base class for WWW::MenuGrinder
 
@@ -48,13 +47,15 @@ sub ACCEPT_CONTEXT {
 
 
 __END__
+=pod
+
 =head1 NAME
 
 Catalyst::Model::MenuGrinder - Catalyst Model base class for WWW::MenuGrinder
 
 =head1 VERSION
 
-version 0.01_02
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -79,8 +80,10 @@ version 0.01_02
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by HBS Labs, LLC..
+This software is copyright (c) 2010 by HBS Labs, LLC..
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
+
+=cut
 
