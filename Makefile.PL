@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker 6.11;
 
 my %WriteMakefileArgs = (
                        'test' => {
-                                   'TESTS' => 't/*.t t/MyApp/t/*.t'
+                                   'TESTS' => 't/*.t'
                                  },
                        'NAME' => 'Catalyst::Model::MenuGrinder',
                        'DISTNAME' => 'Catalyst-Model-MenuGrinder',
@@ -21,7 +21,7 @@ my %WriteMakefileArgs = (
                        'BUILD_REQUIRES' => {},
                        'ABSTRACT' => 'A Catalyst model base-class for using WWW::MenuGrinder',
                        'EXE_FILES' => [],
-                       'VERSION' => '0.04',
+                       'VERSION' => '0.05',
                        'PREREQ_PM' => {
                                         'Scope::Guard' => '0',
                                         'WWW::MenuGrinder' => '0.04',

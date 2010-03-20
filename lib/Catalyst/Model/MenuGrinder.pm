@@ -1,5 +1,5 @@
 package Catalyst::Model::MenuGrinder;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 # ABSTRACT: Catalyst Model base class for WWW::MenuGrinder
 
@@ -55,9 +55,10 @@ Catalyst::Model::MenuGrinder - Catalyst Model base class for WWW::MenuGrinder
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
+
 
   package MyApp::Model::Menu;
 

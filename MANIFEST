@@ -32,9 +32,5 @@ t/MyApp/script/myapp_create.pl
 t/MyApp/script/myapp_fastcgi.pl
 t/MyApp/script/myapp_server.pl
 t/MyApp/script/myapp_test.pl
-t/MyApp/t/01app.t
-t/MyApp/t/02pod.t
-t/MyApp/t/03podcoverage.t
-t/MyApp/t/view_TT.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
