@@ -1,5 +1,4 @@
 package MyApp::View::TT;
-our $VERSION = '0.05';
 
 use strict;
 use base 'Catalyst::View::TT';

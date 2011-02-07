@@ -1,5 +1,7 @@
 package Catalyst::Model::MenuGrinder::Menu;
-our $VERSION = '0.05';
+BEGIN {
+  $Catalyst::Model::MenuGrinder::Menu::VERSION = '0.06';
+}
 
 # ABSTRACT : WWW::MenuGrinder base class for Catalyst
 
@@ -18,6 +20,18 @@ sub has_priv {
   my ($self, $priv) = @_;
 
   return $self->_c->check_user_roles($priv);
+}
+
+sub has_user {
+  my ($self) = @_;
+
+  return $self->_c->user_exists;
+}
+
+sub has_user_in_realm {
+  my ($self, $realm) = @_;
+
+  return $self->_c->user_in_realm($realm);
 }
 
 sub path {
@@ -83,15 +97,15 @@ Catalyst::Model::MenuGrinder::Menu
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 AUTHOR
 
-  Andrew Rodland <andrew@hbslabs.com>
+Andrew Rodland <andrew@hbslabs.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by HBS Labs, LLC..
+This software is copyright (c) 2011 by HBS Labs, LLC..
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

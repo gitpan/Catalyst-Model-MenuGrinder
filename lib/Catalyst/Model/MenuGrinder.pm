@@ -1,32 +1,45 @@
 package Catalyst::Model::MenuGrinder;
-our $VERSION = '0.05';
+BEGIN {
+  $Catalyst::Model::MenuGrinder::VERSION = '0.06';
+}
 
 # ABSTRACT: Catalyst Model base class for WWW::MenuGrinder
+# This looks a lot like Catalyst::Model::Factory::PerRequest, but it differs
+# in that it constructs the MenuGrinder object once on startup, loading all of
+# the plugins and such, and then delegates to the glue's "accept_context" on
+# ACCEPT_CONTEXT. We could probably remove a layer here and switch to PerRequest
+# but that's for later.
 
-use base 'Catalyst::Model';
+use Moose;
+extends 'Catalyst::Model';
 
 use Scope::Guard;
 
-__PACKAGE__->mk_accessors('_menu');
+has '_menu' => (
+  is => 'rw',
+  builder => '_build__menu',
+);
 
-sub new {
-  my $class = shift;
-  my $self = $class->NEXT::new(@_);
+has 'menu_class' => (
+  is => 'ro',
+  isa => 'Str',
+  default => 'Catalyst::Model::MenuGrinder::Menu',
+);
 
-  my $config = $self->config;
+has 'menu_config' => (
+  is => 'ro',
+  isa => 'HashRef',
+  default => sub { +{} },
+);
 
-  my $menu_class = $config->{menu_class} || "Catalyst::Model::MenuGrinder::Menu";
-  eval "require $menu_class; 1;" or die "$@ loading menu_class";
+sub _build__menu {
+  my ($self) = @_;
 
-  my $menu_config = $config->{menu_config} || {};
+  Class::MOP::load_class( $self->menu_class );
 
-  my $menu = $menu_class->new(
-    config => $menu_config,
+  return $self->menu_class->new(
+    config => $self->menu_config,
   );
-
-  $self->_menu($menu);
-
-  return $self;
 }
 
 sub ACCEPT_CONTEXT {
@@ -55,10 +68,9 @@ Catalyst::Model::MenuGrinder - Catalyst Model base class for WWW::MenuGrinder
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
-
 
   package MyApp::Model::Menu;
 
@@ -77,11 +89,11 @@ version 0.05
 
 =head1 AUTHOR
 
-  Andrew Rodland <andrew@hbslabs.com>
+Andrew Rodland <andrew@hbslabs.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by HBS Labs, LLC..
+This software is copyright (c) 2011 by HBS Labs, LLC..
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
